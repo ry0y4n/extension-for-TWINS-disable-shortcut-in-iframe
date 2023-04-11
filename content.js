@@ -19,7 +19,7 @@ function keyHandler(innerDocument, outerDocument) {
     // キーハンドラー登録（iframe内のdocumentと外側のdocumentどちらにも登録する必要がある（マウスフォーカスしてる方がよばれる））
     [innerDocument, outerDocument].forEach((document) => {
         document.addEventListener("keydown", (event) => {
-            if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowLeft') {
+            if ((event.metaKey || event.altKey) && event.key === 'ArrowLeft') {
                 event.preventDefault();
                 if (innerDocument.referrer !== outerDocument.referrer) {
                     window.location.href = outerDocument.referrer;
@@ -27,7 +27,7 @@ function keyHandler(innerDocument, outerDocument) {
             }
         }, true);
         document.addEventListener("keyup", (event) => {
-            if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowLeft') {
+            if ((event.metaKey || event.altKey) && event.key === 'ArrowLeft') {
                 event.preventDefault();
                 if (innerDocument.referrer !== outerDocument.referrer) {
                     window.location.href = outerDocument.referrer;
