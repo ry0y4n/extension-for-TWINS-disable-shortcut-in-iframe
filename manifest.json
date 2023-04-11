@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "test",
+    "version": "1.0",
+    "description": "hoge, fuga.",
+    "content_scripts": [
+        {
+            "matches": ["https://twins.tsukuba.ac.jp/campusweb/campusportal.do?*"],
+            "js": ["content.js"]
+        }
+    ]
+}
